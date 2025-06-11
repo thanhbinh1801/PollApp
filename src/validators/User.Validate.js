@@ -1,5 +1,5 @@
 import { BadRequestError, ConflictRequestError} from '../handler/error.reponse.js'; 
-import UserModels from '../models//user_models.js';
+import UserModels from '../models/user_models.js';
 
 const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const regexPhone = /^(09)[0-9]{8}$/;
