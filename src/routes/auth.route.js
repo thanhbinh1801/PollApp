@@ -5,7 +5,7 @@ import User from '../models/user_models.js';
 import asyncHandler from '../middlewares/asyncHandler.js';
 import Validate from '../middlewares/validate.js';
 import AuthValidator from '../validators/Auth.validate.js';
-import UserValidator from '../validators/User.validate.js';
+import UserValidator from '../validators/User.Validate.js';
 
 class AuthRouter {
   constructor(){
