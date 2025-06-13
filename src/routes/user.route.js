@@ -16,10 +16,10 @@ class UserRouter {
   }
   setupRoutes() {
     this.router.get('/me', Validate(this.authValidator.checkAuth), asyncHandler(this.userController.getMe));
-    this.router.get('/', Validate(this.authValidator.checkAuth), asyncHandler(this.authValidator.checkAdmin), asyncHandler(this.userController.getAllUsers));
-    this.router.get('/:id', Validate(this.authValidator.checkAuth), asyncHandler(this.authValidator.checkAdmin), asyncHandler(this.userController.getUserByID));
+    this.router.get('/', asyncHandler(this.userController.getAllUsers));
+    this.router.get('/:id', Validate(this.authValidator.checkAuth), Validate(this.authValidator.checkAdmin), asyncHandler(this.userController.getUserByID));
     this.router.put('/:id', Validate(this.authValidator.checkAuth), asyncHandler(this.userController.updateUser));
-    this.router.delete('/:id', Validate(this.authValidator.checkAuth), asyncHandler(this.authValidator.checkAdmin), asyncHandler(this.userController.deleteUser));
+    this.router.delete('/:id', Validate(this.authValidator.checkAuth), Validate(this.authValidator.checkAdmin), asyncHandler(this.userController.deleteUser));
   }
   getRouter() {
     return this.router;
