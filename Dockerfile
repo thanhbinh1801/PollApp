@@ -13,5 +13,8 @@ RUN npm install
 # Copy source
 COPY . .
 
+# Expose port for Docker
+EXPOSE 8000
+
 #Start command
 CMD ["npm", "start"]
