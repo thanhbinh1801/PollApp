@@ -8,6 +8,7 @@ export default class UserController {
   getAllUsers = async (req, res, next) => {
     try {
       const users = await this.userService.getAllUsers();
+      console.log("App rebuilt by CI/CD at " + new Date());
       new OK({
         message: "Users retrieved successfully",
         metadata: users
