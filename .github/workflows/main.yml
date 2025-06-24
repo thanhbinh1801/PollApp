@@ -36,4 +36,8 @@ jobs:
             docker stop poll-app || true
             docker rm poll-app || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/poll-app:latest
-            docker run -d -p 8000:8000 --name poll-app ${{ secrets.DOCKER_USERNAME }}/poll-app:latest
+            docker run -d -p 8000:8000 --name poll-app \
+            -e MONGO_URI="${{ secrets.MONGO_URI }}" \
+            -e PORT="${{ secrets.PORT }}" \
+            -e JWT_SECRET="${{ secrets.JWT_SECRET }}" \
+            ${{ secrets.DOCKER_USERNAME }}/poll-app:latest
