@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connectString = process.env.mongo_url;
+const connectString = process.env.MONGO_URL;
 
 class Database {
   constructor() {

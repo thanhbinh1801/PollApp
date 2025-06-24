@@ -2,7 +2,7 @@ import  { AuthFailureError, BadRequestError } from '../handler/error.reponse.js'
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config();
-const secretKey = process.env.JWT_secret_key;
+const secretKey = process.env.JWT_SECRET_KEY;
 
 export default class AuthValidate {
   checkAuth = async (req, res, next) => {

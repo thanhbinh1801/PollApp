@@ -1,7 +1,7 @@
 import { AuthFailureError } from '../handler/error.reponse.js';
 import jwt from 'jsonwebtoken';
 import 'dotenv/config'; 
-const secret_key = process.env.JWT_secret_key;
+const secret_key = process.env.JWT_SECRET_KEY;
 
 export default class AuthUtils {
   static genAccessToken(user) {
