@@ -14,6 +14,10 @@ const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+  res.status(200).json({message: "Test CI/CD Pipeline"});
+});
+
 indexRouter(app);
 
 app.use(errorHandler);
