@@ -11,7 +11,11 @@ export default class UserService {
     if (!users || users.length === 0) {
       throw new NotFoundError("No users found");
     }
-    return users;
+    const userData = users.map( user => {
+      const{ password, ...rest} = user.toObject();
+      return rest;
+    })
+    return userData;
   }
 
   async getUserByID(userId) {
